@@ -35,7 +35,10 @@ class MainActivity : AppCompatActivity() {
         val toast2 = Toast.makeText(applicationContext, "Ronda acertada", Toast.LENGTH_SHORT)
         val toast3 = Toast.makeText(applicationContext, "Repite la secuencia", Toast.LENGTH_SHORT)
         val bot: Button = findViewById(R.id.jugar)
+        val butchck: Button=  findViewById(R.id.check)
         Log.d("Estado", "onCreate")
+
+        butchck.visibility = View.INVISIBLE
 
         jugar.setOnClickListener {
             finalizado = false
@@ -45,6 +48,8 @@ class MainActivity : AppCompatActivity() {
             toast3.show()
             mostrarRonda()
             bot.visibility = View.INVISIBLE
+            butchck.visibility = View.VISIBLE
+
             Log.d("Estado", "Jugar")
         }
 
@@ -59,12 +64,15 @@ class MainActivity : AppCompatActivity() {
                     ejecutarSecuencia(juego, listaBotones)
                     mostrarRonda()
                     toast2.show()
+
                 } else {
                     finalizado = true
                     toast.show()
                     contadorRonda = 0
                     val bot: Button = findViewById(R.id.jugar)
                     bot.visibility = View.VISIBLE
+                    butchck.visibility = View.INVISIBLE
+
                     Log.d("Estado", "GAME OVER")
                 }
             }

@@ -11,13 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="JUGAR"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724"
-        android:visibility="visible"/>
+        app:layout_constraintVertical_bias="0.824" />
 
     <Button
         android:id="@+id/amarillo"
@@ -73,8 +73,8 @@
 
     <TextView
         android:id="@+id/ronda"
-        android:layout_width="46dp"
-        android:layout_height="20dp"
+        android:layout_width="59dp"
+        android:layout_height="17dp"
         android:text="RONDA"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
