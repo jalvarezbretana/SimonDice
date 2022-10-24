@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var juego = ArrayList<Int>()
-        var jugador = ArrayList<Int>()
+        val juego = ArrayList<Int>()
+        val jugador = ArrayList<Int>()
         var finalizado = false
         val jugar = findViewById<Button>(R.id.jugar)
         val comprobarSecuencia = findViewById<Button>(R.id.check)
@@ -32,10 +32,10 @@ class MainActivity : AppCompatActivity() {
         val verde = findViewById<Button>(R.id.verde)
         val listaBotones = listOf(rojo, verde, amarillo, azul)
         val toast = Toast.makeText(applicationContext, "GAME OVER", Toast.LENGTH_SHORT)
-        val toast2 = Toast.makeText(applicationContext, "Ronda acertada", Toast.LENGTH_SHORT)
-        val toast3 = Toast.makeText(applicationContext, "Repite la secuencia", Toast.LENGTH_SHORT)
+        val toast2 = Toast.makeText(applicationContext, "Ronda ganada", Toast.LENGTH_SHORT)
+        val toast3 = Toast.makeText(applicationContext, "Memoriza el orden de los colores", Toast.LENGTH_SHORT)
         val bot: Button = findViewById(R.id.jugar)
-        val butchck: Button=  findViewById(R.id.check)
+        val butchck: Button = findViewById(R.id.check)
         Log.d("Estado", "onCreate")
 
         butchck.visibility = View.INVISIBLE
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             contadorRonda++
             if (finalizado == false) {
                 if (checkSecuencia(juego, jugador)) {
-                    Log.d("Estado", "Ronda acertada")
+                    Log.d("Estado", "Ronda ganada")
                     añadirSecuencia(juego)
                     jugador.clear()
                     ejecutarSecuencia(juego, listaBotones)
@@ -72,7 +72,6 @@ class MainActivity : AppCompatActivity() {
                     val bot: Button = findViewById(R.id.jugar)
                     bot.visibility = View.VISIBLE
                     butchck.visibility = View.INVISIBLE
-
                     Log.d("Estado", "GAME OVER")
                 }
             }
@@ -159,7 +158,7 @@ class MainActivity : AppCompatActivity() {
                         ColorStateList.valueOf(Color.parseColor("blue"))
                 }
             }
-            var t = Toast.makeText(applicationContext, "Repite secuencia", Toast.LENGTH_SHORT)
+            var t = Toast.makeText(applicationContext, "Repite el orden de los colores", Toast.LENGTH_SHORT)
             t.show()
             Log.d("Estado", "Repite secuencia")
         }
